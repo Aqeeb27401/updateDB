@@ -5,4 +5,7 @@ code=int(input("Enter code:"))
 salary=int(input("Enter salary:"))
 Cursor.execute("UPDATE `emp` SET `salary` = {} WHERE `emp`.`code` = {};".format(salary,code))
 con.commit()
-print("Sucessfully updated")
+if Cursor.rowcount>0:
+      print("Sucessfully updated")
+else:
+  print("No Data Found")
